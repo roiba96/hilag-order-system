@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/*
+ * HILAG brand tokens (from the baker's menu poster). Light theme only.
+ * Use them as Tailwind utilities: bg-cream, text-ink, border-line, bg-paid-bg text-paid, ...
+ * Measured contrast (WCAG AA needs 4.5): ink on cream 11.2, ink-muted on surface 5.7 (lowest),
+ * status badges 6.3–6.9.
+ */
+@theme inline {
+  --font-sans: var(--font-heebo), system-ui, sans-serif;
+
+  --color-cream: #f7f1e8; /* page background */
+  --color-ink: #4a2c1d; /* text and primary buttons */
+  --color-ink-muted: #6e5444; /* secondary text */
+  --color-surface: #f3e6d3; /* soft tan surfaces */
+  --color-line: #eadcc8; /* borders, dividers */
+  --color-card: #ffffff;
+
+  /* Payment status: text on background */
+  --color-paid: #24593a;
+  --color-paid-bg: #e2efe4;
+  --color-requested: #7a4a00;
+  --color-requested-bg: #fcefd4;
+  --color-unpaid: #8a3b12;
+  --color-unpaid-bg: #fbe3d6;
+
+  --radius-card: 18px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+/*
+ * iPhone layout guards. In @layer base so Tailwind utilities (min-w-28, text-lg...) still win.
+ * - The page never scrolls sideways (iOS zooms the whole page out when content is too wide).
+ * - fieldset defaults to min-width: min-content, so a wide chip row inside one stretched the
+ *   page; flex/grid children likewise default to min-width: auto. Both may shrink now.
+ * - Form fields under 16px make iOS zoom in on focus.
+ */
+@layer base {
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+  fieldset {
+    min-width: 0;
+  }
+  .flex > *,
+  .grid > * {
+    min-width: 0;
+  }
+  input,
+  select,
+  textarea {
+    font-size: max(16px, 1em);
+  }
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+/* Print (the /today/print sheet for the fridge): A4, white paper, black text. */
+@page {
+  size: A4;
+  margin: 12mm;
+}
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+}
+
+/* Visible keyboard focus everywhere (kitchen use is touch, desktop use is keyboard too). */
+:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 2px;
+}

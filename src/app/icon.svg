@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- HILAG app icon: a glazed donut on chocolate. Source for the PNGs (npm run icons). -->
+  <!-- Donut fits in the central 80% circle, so the same art works as a maskable icon. -->
+  <rect width="512" height="512" fill="#4a2c1d"/>
+  <circle cx="256" cy="256" r="176" fill="#eadcc8"/>
+  <path fill="#f7f1e8" d="M256 98c40 0 58 14 82 20 30 8 44 34 50 60 7 28 30 44 26 78-4 32-22 40-30 66-10 32-38 44-66 52-24 7-36 22-62 22s-38-15-62-22c-28-8-56-20-66-52-8-26-26-34-30-66-4-34 19-50 26-78 6-26 20-52 50-60 24-6 42-20 82-20z"/>
+  <circle cx="256" cy="256" r="58" fill="#eadcc8"/>
+  <circle cx="256" cy="256" r="44" fill="#4a2c1d"/>
+  <g fill="#4a2c1d">
+    <rect x="196" y="150" width="34" height="11" rx="5.5" transform="rotate(-25 213 155)"/>
+    <rect x="292" y="146" width="34" height="11" rx="5.5" transform="rotate(30 309 151)"/>
+    <rect x="340" y="236" width="34" height="11" rx="5.5" transform="rotate(80 357 241)"/>
+    <rect x="300" y="336" width="34" height="11" rx="5.5" transform="rotate(-35 317 341)"/>
+    <rect x="186" y="340" width="34" height="11" rx="5.5" transform="rotate(20 203 345)"/>
+    <rect x="136" y="244" width="34" height="11" rx="5.5" transform="rotate(-75 153 249)"/>
+  </g>
+</svg>

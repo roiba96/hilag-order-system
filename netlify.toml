@@ -1,0 +1,12 @@
+# Netlify build settings. The Next.js adapter (@netlify/plugin-nextjs, OpenNext) is added by
+# Netlify automatically and kept up to date; don't pin it unless a release breaks the site.
+# Environment variables are set in the Netlify UI (see README), never here.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "24"
+  # No usage telemetry from Next.js during builds.
+  NEXT_TELEMETRY_DISABLED = "1"
